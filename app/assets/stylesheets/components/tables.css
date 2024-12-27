@@ -1,0 +1,45 @@
+.table {
+  @apply flex-row w-full text-sm text-left text-gray-700 rounded-lg;
+}
+
+.table thead {
+  @apply text-xs text-gray-800 uppercase;
+}
+
+.table thead tr {
+  @apply border-b border-gray-300 divide-x divide-solid;
+}
+
+.table thead tr:first-child {
+  @apply bg-gray-100;
+}
+
+.table thead th {
+  @apply px-1 py-2 text-center;
+}
+
+.table thead th.hidden-until-md,
+.table tbody td.hidden-until-md {
+  @apply hidden md:table-cell;
+}
+
+.table thead th.hidden-until-lg,
+.table tbody td.hidden-until-lg {
+  @apply hidden lg:table-cell;
+}
+
+.table tbody tr {
+  @apply text-xs bg-white border-b divide-x divide-solid;
+}
+
+.table tbody td {
+  @apply px-1 py-2 text-center sm:px-4;
+}
+
+.table tbody td .flex {
+  @apply flex-row items-center justify-center gap-2;
+}
+
+.table tbody tr:last-child th {
+  @apply p-1 bg-gray-100;
+}

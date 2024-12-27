@@ -1,0 +1,72 @@
+<div class="flex flex-col items-center px-6 my-6 overflow-auto shadow-md sm:mx-auto ">
+	<div id="allAssignments" class="hidden tab-content">
+		<%= render "assignments/tabs" %>
+		<%= turbo_frame_tag "assignments_table" do %>
+			<div class="max-h-screen h-full overflow-auto mb-4">
+				<table id="myTable" class="table">
+					<thead>
+						<tr>
+							<th class="w-1/4 bg-gray-200"><%= sort_link @q, :business_name, "Location" %></th>
+							<th class="w-1/4 bg-gray-200 hidden-until-md"><%= sort_link @q, :area, "Area"  %></th>
+							<th class="w-1/4 bg-gray-200"><%= sort_link @q, :user_full_name, "Team Member" %></th>
+							<th class="w-1/4 bg-gray-200">Posters</th>
+							<th class="w-1/4 bg-gray-200">Notes</th>
+							<th class="w-1/4 bg-gray-200 rounded-tr-lg hidden-until-md"></th>
+						</tr>
+					</thead>
+					<tbody>
+						<% @assignments.order(:created_at).each do |assignment| %>
+							<%= render partial: "assignment", locals: { assignment: assignment } %>
+						<% end %>
+					</tbody>
+				</table>
+			</div>
+		<% end %>
+	</div>
+
+	<div id="myAssignments" class="tab-content">
+		<%= turbo_frame_tag "current_user_assignments" do %>
+		<%= render "assignments/tabs" %>
+			<div class="max-h-screen h-full overflow-auto mb-4">
+				<table id="myTeamMemberTable" class="table">
+					<thead>
+						<tr>
+							<th class="w-1/4 bg-gray-200"><%= sort_link @q, :business_name, "Location" %></th>
+							<th class="w-1/4 bg-gray-200 hidden-until-md"><%= sort_link @q, :area, "Area"  %></th>
+							<th class="w-1/4 bg-gray-200"><%= sort_link @q, :user_full_name, "Team Member" %></th>
+							<th class="w-1/4 bg-gray-200">Posters</th>
+							<th class="w-1/4 bg-gray-200">Notes</th>
+							<th class="w-1/4 bg-gray-200 rounded-tr-lg hidden-until-md"></th>
+						</tr>
+					</thead>
+					<tbody>
+						<% @assignments.where(user_id: current_user.id).order(:created_at).each do |assignment| %>
+							<%= render partial: "assignment", locals: { assignment: assignment } %>
+						<% end %>
+					</tbody>
+				</table>
+			</div>
+		<% end %>
+	</div>
+</div>
+
+<script>
+	function showTab(tab) {
+		const allAssignments = document.getElementById('allAssignments');
+		const myAssignments = document.getElementById('myAssignments');
+		const allAssignmentsTab = document.getElementById('allAssignmentsTab');
+		const myAssignmentsTab = document.getElementById('myAssignmentsTab');
+
+		if (tab === 'all') {
+			allAssignments.classList.remove('hidden');
+			myAssignments.classList.add('hidden');
+			allAssignmentsTab.classList.add('active', 'bg-gray-200');
+			myAssignmentsTab.classList.remove('active', 'bg-gray-200');
+		} else {
+			allAssignments.classList.add('hidden');
+			myAssignments.classList.remove('hidden');
+			allAssignmentsTab.classList.remove('active', 'bg-gray-200');
+			myAssignmentsTab.classList.add('active', 'bg-gray-200');
+		}
+	}
+</script>

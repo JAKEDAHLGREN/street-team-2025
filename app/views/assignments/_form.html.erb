@@ -1,0 +1,63 @@
+<section class="form">
+  <%= form_with(model: @assignment, local: true) do |form| %>
+    <% if @assignment.errors.any? %>
+      <div class="form-errors">
+        <h2><%= pluralize(@assignment.errors.count, "error") %> prohibited this assignment from being saved:</h2>
+        <ul>
+          <% @assignment.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="form-container">
+      <div>
+        <%= form.label :user_id, "Team Member" %>
+        <%= form.select :user_id, @users.collect { |user| [user.full_name, user.id] }, prompt: "Select a Team Member" %>
+      </div>
+
+      <div>
+        <%= form.label :area, "Area of Town" %>
+        <%= form.select :area, Constants::AREAS, prompt: "Select an Area" %>
+      </div>
+
+      <div>
+        <%= form.label :business_name, "Location" %>
+        <%= form.select :business_name, Constants::BUSINESS_NAMES, prompt: "Select a Location" %>
+      </div>
+
+      <div class="flex flex-row items-center justify-between">
+        <div class="form-checkbox-container">
+          <%= form.label :wave_one, "Wave #1" %>
+          <%= form.check_box :wave_one, class: "form-checkbox" %>
+        </div>
+
+        <div class="form-checkbox-container">
+          <%= form.label :wave_two, "Wave #2" %>
+          <%= form.check_box :wave_two, class: "form-checkbox" %>
+        </div>
+
+        <div class="form-checkbox-container">
+          <%= form.label :wave_three, "Wave #3" %>
+          <%= form.check_box :wave_three, class: "form-checkbox" %>
+        </div>
+
+        <div class="form-checkbox-container">
+          <%= form.label :other, "Other" %>
+          <%= form.check_box :other, class: "form-checkbox" %>
+        </div>
+      </div>
+
+      <div class="col-span-2">
+        <%= form.label :notes %>
+        <%= form.text_field :notes, placeholder:"Optional details...", class: "form-text-field" %>
+      </div>
+
+      <div class="form-buttons">
+        <%= link_to "Cancel", assignments_path, class: "btn-cancel" %>
+        <%= form.submit "Save Assignment", class: "btn-submit" %>
+      </div>
+    </div>
+  <% end %>
+</section>

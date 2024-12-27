@@ -1,0 +1,16 @@
+<div class="flex-col items-center">
+  <div class="flex items-center justify-end gap-1 px-2 md:gap-2 lg:gap-4 w-full">
+    <%= link_to "Create Assignment", new_assignment_path, class: "text-white bg-green-500 hover:bg-green-700 text-sm font-bold py-2 px-4 rounded" %>
+    <%= link_to "Change Password", edit_user_registration_path, class: "text-white bg-blue-500 hover:bg-blue-700 text-sm font-bold py-2 px-4 rounded" %>
+    <%= link_to 'Sign Out', destroy_user_session_path, data: { turbo_method: :delete }, class: "text-white bg-red-500 hover:bg-red-700 text-sm font-bold py-2 px-4 rounded" %>
+  </div>
+  <br>
+
+  <div class="flex items-center justify-end px-2 py-2 ml-auto mr-4 text-white rounded-lg bg-black/70 w-fit">
+    <%= current_user.email %>
+  </div>
+
+  <div id="assignments_table" class="flex flex-col max-w-full mt-2 mb-4 overflow-x-auto lg:mt-8 lg:mb-8 mx-auto">
+    <%= render partial: "assignments/table" %>
+  </div>
+</div>

@@ -1,0 +1,40 @@
+.form {
+  @apply flex items-center justify-center rounded-lg max-w-4xl p-4 mt-6 mb-4 bg-white border border-gray-200 rounded-lg shadow-lg sm:p-6;
+}
+
+.form .form-errors {
+  @apply relative px-4 py-3 mb-4 text-red-700 bg-red-100 border border-red-400 rounded;
+}
+
+.form .form-container {
+  @apply px-6 py-2 mt-4 rounded-lg bg-white/80;
+}
+
+.form .form-label {
+  @apply block mt-4 mb-2 text-sm font-medium text-gray-900;
+}
+
+.form .form-select,
+.form .form-text-field {
+  @apply w-full mt-1 block rounded-md border-gray-300 shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm;
+}
+
+.form .form-checkbox-container {
+  @apply flex flex-col items-center;
+}
+
+.form .form-checkbox {
+  @apply w-4 h-4 border border-gray-400 rounded-md bg-gray-50 focus:ring-blue-300;
+}
+
+.form .form-buttons {
+  @apply flex justify-end mt-4 space-x-2;
+}
+
+.form .btn-cancel {
+  @apply px-4 py-2 text-sm font-medium text-gray-700 bg-gray-200 rounded-md shadow-sm hover:bg-gray-300;
+}
+
+.form .btn-submit {
+  @apply px-4 py-2 text-sm font-medium text-white bg-blue-600 rounded-md shadow-sm hover:bg-blue-700 focus:ring-2 focus:ring-offset-2 focus:ring-blue-500;
+}

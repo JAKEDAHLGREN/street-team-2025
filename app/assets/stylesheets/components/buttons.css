@@ -1,0 +1,62 @@
+/* Base Button Style: Has already been referenced in each of the other class names, so you don't need to use the 'btn' class in the views */
+.btn {
+	@apply w-fit border font-medium rounded-full text-sm px-5 py-2.5 text-center cursor-pointer;
+}
+
+/* Primary Blue Button: Used for Create, Show, Update, Submit, Accept("OK" for modals), and Report Download for Successful Auction Reconciliation */
+.btn-create,
+.btn-show,
+.btn-update,
+.btn-submit,
+.btn-accept,
+.btn-report-download {
+	@apply btn text-white bg-blue-500 border-blue-500 hover:bg-blue-700 hover:border-blue-700 focus:bg-blue-700 focus:border-blue-700 active:bg-teal-500 active:border-teal-500;
+}
+
+/* Primary Red Button: Used for Delete or Accept("OK" for an error message modal)  */
+.btn-delete,
+.btn-accept-error {
+	@apply btn text-white bg-red-600 border-red-600 hover:bg-red-500 hover:border-red-500 focus:bg-red-500 focus:border-red-500 active:bg-red-200 active:border-red-200;
+}
+
+/* Secondary Blue Button: Used for Download - an individual file on Auction Recon show page, a Secondary Update button(when there is already a Primary blue button), or to Resend(Invites or password reset link) */
+.btn-download,
+.btn-secondary-update,
+.btn-resend {
+	@apply btn border-blue-500 text-blue-500 hover:border-blue-700 hover:text-white hover:bg-blue-700 focus:border-blue-700 focus:text-white focus:bg-blue-700 active:border-teal-500 active:bg-teal-500;
+}
+
+/* Secondary Red Button: Used for Cancel or if there is a Primary Blue button next to a Delete button  */
+.btn-secondary-delete,
+.btn-cancel {
+	@apply btn border-red-600 text-red-600 hover:border-red-500 hover:text-black hover:bg-red-500 focus:border-red-500 focus:text-black focus:bg-red-500 active:border-red-200 active:bg-red-200;
+}
+
+/* Secondary Black Button: Use if there are three buttons grouped together and there is already a Secondary red button being used */
+.btn-secondary-cancel {
+	@apply btn border-black text-black  hover:border-gray-700 hover:bg-gray-700 focus:bg-gray-700 active:bg-gray-400 ;
+}
+
+/* X to close modal in the top right */
+.btn-modal-x {
+	@apply text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 absolute top-2.5 end-2.5 inline-flex items-center justify-center focus:ring-4 focus:ring-gray-300;
+}
+/* Navigation Button Styles */
+.btn-header-nav {
+	@apply p-2 text-gray-500 rounded-lg hover:text-gray-900 hover:bg-gray-100 focus:ring-4 focus:ring-gray-300;
+}
+
+/* Header Nav Dropdown Menu Buttons */
+.btn-header-nav-dropdown {
+	@apply block p-4 text-center rounded-lg hover:text-gray-900 hover:bg-gray-100 focus:ring-4 focus:ring-gray-300 shrink-0;
+}
+
+/* Sidebar Nav Buttons */
+.btn-sidebar-nav {
+	@apply flex items-center w-full p-2 text-base font-medium text-gray-900 transition duration-75 rounded-lg hover:bg-gray-100/50;
+}
+
+/* Hyperlink Styles */
+.hyperlink {
+	@apply text-blue-500 hover:underline;
+}
