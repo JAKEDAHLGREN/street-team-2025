@@ -3,18 +3,24 @@
   <head>
     <title>StreetTeam2025</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
+		<meta name="mobile-web-app-capable" content="yes">
+  	<meta name="turbo-refresh-scroll" content="preserve">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-    <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
+		<%= turbo_refreshes_with method: :morph, scroll: :preserve %>
 
+    <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   </head>
 
   <body class="bg-fixed bg-center bg-no-repeat bg-cover" style="background-image: url('<%= asset_path('honey-comb.png') %>');">
-    <main class="container mx-auto mt-28 px-5 flex">
-      <p class="notice"><%= notice %></p>
-      <p class="alert"><%= alert %></p>
+    <main class="container mx-auto mt-8 px-5">
+      <div class="fixed w-fit right-4 top-0">
+        <%= render_flash %>
+      </div>
       <%= yield %>
     </main>
   </body>

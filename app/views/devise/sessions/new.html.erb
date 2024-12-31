@@ -1,20 +1,9 @@
-<h2>Log in</h2>
+<div class="flex flex-col items-center mx-auto">
+  <h1 class="flex-col items-center justify-center mt-4 text-xl font-bold text-center text-white md:text-4xl lg:text-7xl">
+    Log in
+  </h1>
 
-<%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="form-inputs">
-    <%= f.input :email,
-                required: false,
-                autofocus: true,
-                input_html: { autocomplete: "email" } %>
-    <%= f.input :password,
-                required: false,
-                input_html: { autocomplete: "current-password" } %>
-    <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+  <div>
+    <%= render "devise/sessions/form" %>
   </div>
-
-  <div class="form-actions">
-    <%= f.button :submit, "Log in" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+</div>

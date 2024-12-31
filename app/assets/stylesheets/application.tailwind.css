@@ -6,6 +6,9 @@
 @tailwind components;
 @tailwind utilities;
 
+@import "flowbite";
+@import "font-awesome";
+
 @layer base {
 	input {
 		@apply disabled:text-gray-400;
@@ -17,15 +20,27 @@
 	input[type="search"],
   textarea,
 	select {
-		@apply w-full disabled:text-gray-400 bg-white border border-gray-300 text-gray-900 placeholder:text-gray-400 text-sm focus:ring-blue-500 focus:border-blue-500 block p-2.5 pl-5 rounded-full focus:placeholder-transparent;
+		@apply w-full disabled:text-gray-400 bg-gray-50 border border-gray-300 text-gray-900 placeholder:text-gray-400 text-sm focus:ring-blue-500 focus:border-blue-500 block p-2.5 pl-5 rounded-full focus:placeholder-transparent;
+	}
+
+	input[type="file"] {
+		@apply w-full text-sm text-gray-700 border rounded-full cursor-pointer bg-gray-50 file:bg-blue-600 file:active:bg-teal-500 file:hover:bg-blue-700 focus:outline-none;
 	}
 
 	input[type="checkbox"] {
-		@apply w-4 h-4 border border-gray-400 rounded-md bg-white focus:ring-blue-300 ;
+		@apply w-4 h-4 border border-gray-400 rounded-md bg-gray-50 focus:ring-blue-300;
 	}
 
 	label {
-		@apply block mt-4 mb-2 text-sm font-medium text-gray-900;
+		@apply block mt-4 mb-2 text-sm font-medium text-gray-900 ;
+	}
+
+	button {
+		@apply disabled:bg-gray-300 disabled:pointer-events-none disabled:border-gray-300;
+	}
+
+	a[disabled] {
+		@apply bg-gray-300 border border-gray-300 pointer-events-none hover:bg-gray-300;
 	}
 }
 

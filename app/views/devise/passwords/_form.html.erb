@@ -1,0 +1,18 @@
+<section class="form">
+  <%= form_with(model: resource, url: password_path(resource_name), method: :post, local: true) do |form| %>
+    <div class="form-container">
+        <h1 class="flex-col items-center justify-center -mt-4 text-xl font-bold text-center text-black md:text-4xl lg:text-7xl">
+    Forgot your password?
+  </h1>
+      <div>
+        <%= form.label :email %>
+        <%= form.text_field :email, required: true, autofocus: true, autocomplete: "email", placeholder: true %>
+      </div>
+    </div>
+
+    <div class="form-buttons">
+      <%= link_to "Cancel", assignments_path, class: "btn-cancel" %>
+      <%= form.submit "Email Password", class: "btn-submit" %>
+    </div>
+  <% end %>
+</section>

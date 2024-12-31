@@ -10,12 +10,12 @@ one:
   other: false
   notes: MyText
 
-two:
-  user: two
-  area: MyString
-  business_name: MyString
-  wave_one: false
-  wave_two: false
-  wave_three: false
-  other: false
-  notes: MyText
+# two:
+#   user: two
+#   area: MyString
+#   business_name: MyString
+#   wave_one: false
+#   wave_two: false
+#   wave_three: false
+#   other: false
+#   notes: MyText

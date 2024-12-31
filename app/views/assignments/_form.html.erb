@@ -51,12 +51,12 @@
 
       <div class="col-span-2">
         <%= form.label :notes %>
-        <%= form.text_field :notes, placeholder:"Optional details...", class: "form-text-field" %>
+        <%= form.text_field :notes, placeholder:"Optional details..." %>
       </div>
 
-      <div class="form-buttons">
-        <%= link_to "Cancel", assignments_path, class: "btn-cancel" %>
-        <%= form.submit "Save Assignment", class: "btn-submit" %>
+      <div class="flex justify-end mt-4 space-x-2">
+        <%= link_to "Cancel", assignments_path, class: "btn-secondary-delete" %>
+        <%= form.submit "Save Assignment", class: "btn-create" %>
       </div>
     </div>
   <% end %>

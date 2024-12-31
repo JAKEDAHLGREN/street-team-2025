@@ -30,11 +30,3 @@
 .form .form-buttons {
   @apply flex justify-end mt-4 space-x-2;
 }
-
-.form .btn-cancel {
-  @apply px-4 py-2 text-sm font-medium text-gray-700 bg-gray-200 rounded-md shadow-sm hover:bg-gray-300;
-}
-
-.form .btn-submit {
-  @apply px-4 py-2 text-sm font-medium text-white bg-blue-600 rounded-md shadow-sm hover:bg-blue-700 focus:ring-2 focus:ring-offset-2 focus:ring-blue-500;
-}
