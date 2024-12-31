@@ -1,5 +1,5 @@
-<div class="flex flex-col items-center px-6 my-6 overflow-auto shadow-md  max-h-[calc(100vh-200px)] overflow-y-auto">
-	<div id="allAssignments" class="hidden tab-content">
+<div data-controller="tab-toggle">
+	<div id="allAssignments" data-tab-toggle-target="allAssignments" class="hidden tab-content">
 		<%= render "assignments/tabs" %>
 		<%= turbo_frame_tag "assignments_table" do %>
 			<div class="max-h-screen h-full overflow-auto mb-4">
@@ -24,7 +24,7 @@
 		<% end %>
 	</div>
 
-	<div id="myAssignments" class="tab-content">
+	<div id="myAssignments" data-tab-toggle-target="myAssignments" class="tab-content">
 		<%= turbo_frame_tag "current_user_assignments" do %>
 		<%= render "assignments/tabs" %>
 			<div class="max-h-screen h-full overflow-auto mb-4">
@@ -49,24 +49,3 @@
 		<% end %>
 	</div>
 </div>
-
-<script>
-	function showTab(tab) {
-		const allAssignments = document.getElementById('allAssignments');
-		const myAssignments = document.getElementById('myAssignments');
-		const allAssignmentsTab = document.getElementById('allAssignmentsTab');
-		const myAssignmentsTab = document.getElementById('myAssignmentsTab');
-
-		if (tab === 'all') {
-			allAssignments.classList.remove('hidden');
-			myAssignments.classList.add('hidden');
-			allAssignmentsTab.classList.add('active', 'bg-gray-200');
-			myAssignmentsTab.classList.remove('active', 'bg-gray-200');
-		} else {
-			allAssignments.classList.add('hidden');
-			myAssignments.classList.remove('hidden');
-			allAssignmentsTab.classList.remove('active', 'bg-gray-200');
-			myAssignmentsTab.classList.add('active', 'bg-gray-200');
-		}
-	}
-</script>

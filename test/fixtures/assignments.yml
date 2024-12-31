@@ -1,21 +1,23 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  user: one
-  area: MyString
-  business_name: MyString
+  id: 1
+  user_id: 1
+  area: "Downtown"
+  business_name: "Test Business"
+  wave_one: true
+  wave_two: false
+  wave_three: true
+  other: false
+  notes: "Fixture data"
+
+two:
+  id: 2
+  user_id: 2
+  area: "The Bench"
+  business_name: "Rizzo"
   wave_one: false
   wave_two: false
   wave_three: false
   other: false
-  notes: MyText
-
-# two:
-#   user: two
-#   area: MyString
-#   business_name: MyString
-#   wave_one: false
-#   wave_two: false
-#   wave_three: false
-#   other: false
-#   notes: MyText
+  notes: "MyText"

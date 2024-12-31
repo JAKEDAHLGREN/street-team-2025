@@ -11,6 +11,10 @@
       </div>
     <% end %>
 
+    <h1 class="flex-col items-center justify-center -mb-4 text-2xl font-bold text-center text-black  md:text-4xl underline">
+      <%= action_name == "new" ? "Create an Assignment" : "Edit Assignment" %>
+    </h1>
+
     <div class="form-container">
       <div>
         <%= form.label :user_id, "Team Member" %>

@@ -5,6 +5,9 @@ if ! gem list foreman -i --silent; then
   gem install foreman
 fi
 
+# Removes public folder
+rails assets:clobber
+
 # Default to port 3000 if not specified
 export PORT="${PORT:-3000}"
 

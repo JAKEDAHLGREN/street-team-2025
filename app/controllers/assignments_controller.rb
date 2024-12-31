@@ -1,6 +1,6 @@
 class AssignmentsController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_users, only: %i[new create edit update]
+  before_action :set_users_and_constants, only: %i[new edit create update]
   before_action :set_assignment, only: %i[show edit update update_wave destroy]
 
   layout 'application'
@@ -17,7 +17,6 @@ class AssignmentsController < ApplicationController
 
   def new
     @assignment = Assignment.new
-    @users = User.all
   end
 
   def create
@@ -31,9 +30,6 @@ class AssignmentsController < ApplicationController
   end
 
   def edit
-    @business_names = Constants::BUSINESS_NAMES
-    @areas = Constants::AREAS
-    @users = User.all
   end
 
   def update
@@ -88,12 +84,10 @@ class AssignmentsController < ApplicationController
 
   private
 
-  def set_assignment
-    @assignment = Assignment.find(params[:id])
-  end
-
-  def set_users
+  def set_users_and_constants
     @users = User.all
+    @business_names = Constants::BUSINESS_NAMES
+    @areas = Constants::AREAS
   end
 
   def set_assignment

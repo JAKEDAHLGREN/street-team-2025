@@ -1,23 +1,28 @@
 <section class="form">
   <%= form_with(model: resource, url: session_path(resource_name), local: true) do |form| %>
     <div class="form-container">
+      <div class="text-center">
+        <%= image_tag "treefort-logo.png", alt: "Treefort Columns", class: "w-fit" %>
+      </div>
+
       <div>
         <%= form.label :email, class: "font-medium" %>
         <%= form.text_field :email, required: true, autofocus: true, autocomplete: "email", placeholder: true %>
       </div>
+
       <div>
         <%= form.label :password, class: "font-medium" %>
         <%= form.password_field :password, required: true, autocomplete: "current-password", placeholder: true %>
       </div>
+
       <% if devise_mapping.rememberable? %>
-        <div class="flex items-center gap-2">
-          <%= form.check_box :remember_me, class: "mt-1" %>
+        <div class="flex items-center gap-2 -mt-2">
+          <%= form.check_box :remember_me, class: "mt-2" %>
           <%= form.label :remember_me %>
         </div>
       <% end %>
     <%= form.submit "Sign In", class: "btn-create w-full" %>
     </div>
-
 
     <div class="text-center -mt-6">
       <%= render "devise/shared/links" %>

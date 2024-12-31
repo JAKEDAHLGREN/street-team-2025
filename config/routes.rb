@@ -9,7 +9,11 @@ Rails.application.routes.draw do
     unlocks: 'users/unlocks'
   }
 
-  resources :assignments
+  resources :assignments do
+    member do
+      patch :update_wave # Add a route for the update_wave action
+    end
+  end
 
   namespace :admin do
     get 'assignments/index'

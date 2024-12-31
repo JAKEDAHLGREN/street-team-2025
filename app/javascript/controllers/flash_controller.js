@@ -15,7 +15,7 @@ export default class extends Controller {
     }
   }
 
-  dismiss() {;
-    this.element.remove()
-  }
+  dismiss() {
+    this.element.remove();
+  };
 }
