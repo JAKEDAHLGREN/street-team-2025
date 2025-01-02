@@ -13,35 +13,35 @@
     </td>
 
     <%= form_with(model: assignment, class: "contents") do |f| %>
-      <td class="flex flex-row px-4 text-center justify-evenly">
+      <td class="flex flex-row px-4 py-2 text-center justify-around">
         <div class="mx-1">
-          #1
+          <%= label_tag "wave_one_#{assignment.id}", "#1" %>
           <%= check_box_tag "assignment[wave_one]", "1", assignment.wave_one, id: "wave_one_#{assignment.id}", class: "wave-checkbox", data: { assignment_id: assignment.id, wave: "wave_one", action: "change->checkbox#toggle" } %>
         </div>
 
         <div class="mx-1">
-          #2
+          <%= label_tag "wave_two_#{assignment.id}", "#2" %>
           <%= check_box_tag "assignment[wave_two]", "1", assignment.wave_two, id: "wave_two_#{assignment.id}", class: "wave-checkbox", data: { assignment_id: assignment.id, wave: "wave_two", action: "change->checkbox#toggle" } %>
         </div>
 
         <div class="mx-1">
-          #3
+          <%= label_tag "wave_three_#{assignment.id}", "#3" %>
           <%= check_box_tag "assignment[wave_three]", "1", assignment.wave_three, id: "wave_three_#{assignment.id}", class: "wave-checkbox", data: { assignment_id: assignment.id, wave: "wave_three", action: "change->checkbox#toggle" } %>
         </div>
 
         <div class="mx-1">
-          Other
+          <%= label_tag "other_#{assignment.id}", "Other" %>
           <%= check_box_tag "assignment[other]", "1", assignment.other, id: "other_#{assignment.id}", class: "wave-checkbox", data: { assignment_id: assignment.id, wave: "other", action: "change->checkbox#toggle" } %>
         </div>
       </td>
 
     <% end %>
 
-    <td class="overflow-hidden text-xs">
+    <td class="overflow-hidden text-xs hidden-until-md">
       <%= assignment.notes %>
     </td>
 
-    <td class="hidden-until-md">
+    <td class="">
       <%= link_to "Edit", edit_assignment_path(assignment), class: "btn-update", data: { turbo: false } %>
     </td>
   </tr>

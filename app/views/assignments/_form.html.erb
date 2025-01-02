@@ -1,5 +1,5 @@
 <section class="form">
-  <%= form_with(model: @assignment, local: true) do |form| %>
+  <%= form_with(model: @assignment, local: true, data: { turbo: false }) do |form| %>
     <% if @assignment.errors.any? %>
       <div class="form-errors">
         <h2><%= pluralize(@assignment.errors.count, "error") %> prohibited this assignment from being saved:</h2>

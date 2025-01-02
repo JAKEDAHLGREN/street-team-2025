@@ -1,14 +1,14 @@
-<div id="alert-1" class="flex mt-10 sm:mt-4 md:mt-0 items-center p-2 text-xl font-bold transition-all duration-300 ease-in-out transform lg:text-2xl z-50 rounded-lg <%= flash_type == 'notice' ? 'bg-green-300 border-green-400 dark:bg-green-600 dark:border-green-600' : 'bg-red-300 border-red-400 dark:bg-red-600 dark:border-red-600' %>" role="alert" data-flash-type="<%= flash_type %>" data-controller="flash" data-flash-auto-close-value="<%= flash_type == 'notice' ? 4 : nil %>">
+<div id="alert-1" class="flex mt-10 sm:mt-4 md:mt-0 items-center p-2 text-xl font-bold transition-all duration-300 ease-in-out transform lg:text-2xl z-50 rounded-lg <%= flash_type.to_s == 'notice' ? 'bg-green-300 border-green-400 dark:bg-green-600 dark:border-green-600' : 'bg-red-300 border-red-400 dark:bg-red-600 dark:border-red-600' %>" role="alert" data-flash-type="<%= flash_type %>" data-controller="flash" data-flash-auto-close-value="<%= flash_type.to_s == 'notice' ? 4 : nil %>">
 
-  <%= icon("fa-solid", "circle-info", class:"text-base #{flash_type == 'notice' ? 'text-green-700' : 'text-red-700'}") %>
+  <%= icon("fa-solid", "circle-info", class:"text-base #{flash_type.to_s == 'notice' ? 'text-green-700' : 'text-red-700'}") %>
 
-  <div class="w-full text-sm font-medium ms-3 <%= flash_type == 'notice' ? 'text-green-700' : 'text-red-700' %>">
+  <div class="w-full text-sm font-medium ms-3 <%= flash_type.to_s == 'notice' ? 'text-green-700' : 'text-red-700' %>">
     <%= message %>
   </div>
 
-  <% if flash_type == 'notice' %>
-    <button type="button" class="ms-auto -mx-1.5 -my-1.5 rounded-lg p-1.5 inline-flex items-center justify-center h-8 w-8 <%= flash_type == 'notice' ? 'hover:bg-green-400 active:bg-green-400 hover:border-green-400  ' : 'hover:bg-red-400 active:bg-red-400 hover:border-red-400' %>" data-action="flash#dismiss" aria-label="Close">
-      <%= icon("fa-solid", "xmark", class:"text-xl #{flash_type == 'notice' ? 'text-green-700' : 'text-red-700'}") %>
+  <% if flash_type.to_s == 'notice' %>
+    <button type="button" class="ms-auto -mx-1.5 -my-1.5 rounded-lg p-1.5 inline-flex items-center justify-center h-8 w-8 <%= flash_type.to_s == 'notice' ? 'hover:bg-green-400 active:bg-green-400 hover:border-green-400' : 'hover:bg-red-400 active:bg-red-400 hover:border-red-400' %>" data-action="flash#dismiss" aria-label="Close">
+      <%= icon("fa-solid", "xmark", class:"text-xl #{flash_type.to_s == 'notice' ? 'text-green-700' : 'text-red-700'}") %>
     </button>
   <% end %>
 </div>

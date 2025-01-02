@@ -15,13 +15,13 @@
         <%= form.password_field :password, required: true, autocomplete: "current-password", placeholder: true %>
       </div>
 
-      <% if devise_mapping.rememberable? %>
-        <div class="flex items-center gap-2 -mt-2">
-          <%= form.check_box :remember_me, class: "mt-2" %>
-          <%= form.label :remember_me %>
-        </div>
-      <% end %>
-    <%= form.submit "Sign In", class: "btn-create w-full" %>
+      <%# if devise_mapping.rememberable? %>
+        <%# <div class="flex items-center gap-2 -mt-2"> %>
+          <%#= form.check_box :remember_me, class: "mt-2" %>
+          <%#= form.label :remember_me %>
+        <%# </div> %>
+      <%# end %>
+    <%= form.submit "Sign In", class: "btn-create w-full mt-4" %>
     </div>
 
     <div class="text-center -mt-6">
