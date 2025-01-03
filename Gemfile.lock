@@ -404,6 +404,7 @@ DEPENDENCIES
   simple_form
   stimulus-rails
   tailwindcss-rails
+  tailwindcss-ruby (~> 3.4)
   turbo-rails
   tzinfo-data
   web-console

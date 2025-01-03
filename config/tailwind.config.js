@@ -1,12 +1,12 @@
+/** @type {import('tailwindcss').Config} */
+
 module.exports = {
   darkMode: 'selector',
   content: [
-    './app/views/**/*.html.erb',
-    './app/views/**/*.html.haml',
+    './public/*.html',
     './app/helpers/**/*.rb',
     './app/javascript/**/*.js',
-    './app/assets/stylesheets/**/*.css',
-    './node_modules/flowbite/**/*.js',
+    './app/views/**/*',
   ],
   theme: {
     extend: {
