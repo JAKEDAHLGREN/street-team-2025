@@ -82,3 +82,5 @@ production:
   database: street_team_2025_production
   username: street_team_2025
   password: <%= ENV["STREET_TEAM_2025_DATABASE_PASSWORD"] %>
+  host: <%= ENV["PGHOST"] %>
+  port: <%= ENV.fetch("PGPORT", 5432) %>
