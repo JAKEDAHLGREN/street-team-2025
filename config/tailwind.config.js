@@ -3,10 +3,11 @@ const defaultTheme = require('tailwindcss/defaultTheme')
 module.exports = {
   darkMode: 'selector',
   content: [
-    './app/**/*.{html,erb,js,css}',
+    './app/views/**/*.html.erb',
+    './app/views/**/*.html.haml',
     './app/helpers/**/*.rb',
-    './app/assets/stylesheets/**/*.css',
     './app/javascript/**/*.js',
+    './app/assets/stylesheets/**/*.css',
     './node_modules/flowbite/**/*.js',
   ],
   theme: {
