@@ -14,16 +14,18 @@ module StreetTeam2025
     # Please, add to the `ignore` list any other `lib` subdirectories that do
     # not contain `.rb` files, or that should not be reloaded or eager loaded.
     # Common ones are `templates`, `generators`, or `middleware`, for example.
-    config.autoload_lib(ignore: %w[assets tasks])
+    # config.autoload_lib(ignore: %w[assets tasks])
 
-    # config.assets.enabled = true
+    config.assets.paths << Rails.root.join('app/assets/builds')
+
+    config.assets.enabled = true
 
     # Configuration for the application, engines, and railties goes here.
     #
     # These settings can be overridden in specific environments using the files
     # in config/environments, which are processed later.
     #
-    # config.time_zone = "Central Time (US & Canada)"
+    config.time_zone = 'Mountain Time (US & Canada)'
     # config.eager_load_paths << Rails.root.join("extras")
   end
 end
