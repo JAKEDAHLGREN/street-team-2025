@@ -2,13 +2,12 @@
 
 module.exports = {
   darkMode: 'class',
-  content: [
-    './public/*.html',
-    './app/helpers/**/*.rb',
-    './app/javascript/**/*.js',
-    './app/views/**/*',
-    './app/assets/stylesheets/**/*.css'
-  ],
+    content: [
+      './app/views/**/*.{html,erb,slim,haml}', // For Rails views
+      './app/helpers/**/*.rb',                // For helper files
+      './app/javascript/**/*.js',             // For JavaScript files
+      './app/assets/stylesheets/**/*.css',    // For stylesheets
+    ],
   theme: {
     extend: {
       screens: {
