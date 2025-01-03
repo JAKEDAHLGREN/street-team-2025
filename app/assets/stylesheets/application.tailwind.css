@@ -6,9 +6,6 @@
 @tailwind components;
 @tailwind utilities;
 
-@import "flowbite";
-@import "font-awesome";
-
 @layer base {
 	input {
 		@apply disabled:text-gray-400;
