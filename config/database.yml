@@ -79,6 +79,7 @@ test:
 #
 production:
   <<: *default
+  url: <%= ENV['DATABASE_URL']
   database: street_team_2025_production
   username: street_team_2025
   password: <%= ENV["STREET_TEAM_2025_DATABASE_PASSWORD"] %>
