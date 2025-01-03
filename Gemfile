@@ -97,4 +97,4 @@ group :test do
   gem 'selenium-webdriver'
 end
 
-gem "tailwindcss-ruby", "~> 3.4"
+gem 'tailwindcss-ruby', '~> 3.4'

@@ -1,12 +1,12 @@
-/** @type {import('tailwindcss').Config} */
+const defaultTheme = require('tailwindcss/defaultTheme')
 
 module.exports = {
   darkMode: 'class',
     content: [
-      './app/views/**/*.{html,erb,slim,haml}', // For Rails views
-      './app/helpers/**/*.rb',                // For helper files
-      './app/javascript/**/*.js',             // For JavaScript files
-      './app/assets/stylesheets/**/*.css',    // For stylesheets
+      './app/views/**/*.html.erb',
+      './app/helpers/**/*.rb',
+      './app/assets/stylesheets/**/*.css',
+      './app/javascript/**/*.js'
     ],
   theme: {
     extend: {
