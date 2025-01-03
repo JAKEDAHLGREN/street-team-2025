@@ -96,5 +96,3 @@ group :test do
   gem 'rails-controller-testing'
   gem 'selenium-webdriver'
 end
-
-gem 'tailwindcss-ruby', '~> 3.4'

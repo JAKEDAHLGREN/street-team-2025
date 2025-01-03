@@ -1,13 +1,12 @@
-const defaultTheme = require('tailwindcss/defaultTheme')
-
+/** @type {import('tailwindcss').Config} */
 module.exports = {
-  darkMode: 'class',
-    content: [
-      './app/views/**/*.html.erb',
-      './app/helpers/**/*.rb',
-      './app/assets/stylesheets/**/*.css',
-      './app/javascript/**/*.js'
-    ],
+  content: [
+    './app/views/**/*.html.erb',
+    './app/helpers/**/*.rb',
+    './app/javascript/**/*.js',
+    './config/**/*.rb',
+    './app/assets/stylesheets/**/*.css'
+  ],
   theme: {
     extend: {
       screens: {
@@ -121,5 +120,10 @@ module.exports = {
   },
   plugins: [
     require('flowbite/plugin')
-  ]
+  ],
+  future: {
+    purgeLayersByDefault: true,
+    removeDeprecatedGapUtilities: true,
+  },
+  debug: true,
 }
