@@ -6,9 +6,7 @@
   "author": "Jake Dahlgren <121595531+JAKEDAHLGREN@users.noreply.github.com>",
   "license": "MIT",
   "dependencies": {
-    "autoprefixer": "^10.4.20",
     "flowbite": "^1.6.0",
-    "postcss": "^8.4.49",
     "yarn": "^1.22.22"
   }
 }

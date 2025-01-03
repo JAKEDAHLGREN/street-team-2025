@@ -332,6 +332,8 @@ GEM
     tailwindcss-rails (3.1.0)
       railties (>= 7.0.0)
       tailwindcss-ruby
+    tailwindcss-ruby (3.4.17-aarch64-linux)
+    tailwindcss-ruby (3.4.17-arm-linux)
     tailwindcss-ruby (3.4.17-arm64-darwin)
     tailwindcss-ruby (3.4.17-x86_64-darwin)
     tailwindcss-ruby (3.4.17-x86_64-linux)
@@ -375,7 +377,7 @@ PLATFORMS
   x86_64-linux-musl
 
 DEPENDENCIES
-  bcrypt (~> 3.1.7)
+  bcrypt
   bootsnap
   capybara
   cssbundling-rails
@@ -388,12 +390,12 @@ DEPENDENCIES
   importmap-rails
   jbuilder
   ostruct
-  pg (~> 1.1)
+  pg
   propshaft
   pry
   pry-rails
-  puma (>= 5.0)
-  rails (~> 7.0)
+  puma
+  rails
   rails-controller-testing
   ransack
   rubocop-rails-omakase
