@@ -77,8 +77,6 @@ group :development do
 
   gem 'faker'
 
-  gem 'hotwire-spark'
-
   gem 'pry'
   gem 'pry-rails'
 

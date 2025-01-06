@@ -16,9 +16,8 @@ module StreetTeam2025
     # Common ones are `templates`, `generators`, or `middleware`, for example.
     # config.autoload_lib(ignore: %w[assets tasks])
 
+    # Add the assets path for propshaft
     config.assets.paths << Rails.root.join('app/assets/builds')
-
-    config.assets.enabled = true
 
     # Configuration for the application, engines, and railties goes here.
     #
