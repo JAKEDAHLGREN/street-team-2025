@@ -1,11 +1,11 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
-    './app/views/**/*.html.erb',
+    './public/*.html',
     './app/helpers/**/*.rb',
     './app/javascript/**/*.js',
-    './config/**/*.rb',
-    './app/assets/stylesheets/**/*.css'
+    './app/views/**/*.{erb,haml,html,slim}',
+    './node_modules/flowbite/**/*.js'
   ],
   theme: {
     extend: {
@@ -120,10 +120,5 @@ module.exports = {
   },
   plugins: [
     require('flowbite/plugin')
-  ],
-  future: {
-    purgeLayersByDefault: true,
-    removeDeprecatedGapUtilities: true,
-  },
-  debug: true,
+  ]
 }

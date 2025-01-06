@@ -1,5 +1,5 @@
 <% if resource.errors.any? %>
-  <div id="error_explanation" class="flex mt-10 sm:mt-4 md:mt-0 items-center p-2 text-xl font-bold transition-all duration-300 ease-in-out transform lg:text-2xl z-50 rounded-lg bg-red-300 border-red-400 dark:bg-red-600 dark:border-red-600" role="alert" data-flash-type="alert">
+  <div id="error_explanation" class="flex mt-10 sm:mt-4 md:mt-0 items-center p-2 text-xl font-bold transition-all duration-300 ease-in-out transform lg:text-2xl z-50 rounded-lg bg-red-300 border-red-400" role="alert" data-flash-type="alert">
     <%= icon("fa-solid", "circle-info", class:"text-base #{flash_type == 'notice' ? 'text-green-700' : 'text-red-700'}") %>
     <h2 class="w-full text-sm font-medium text-red-700">
       <%= I18n.t("errors.messages.not_saved",
