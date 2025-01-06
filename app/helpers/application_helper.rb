@@ -1,5 +1,7 @@
 module ApplicationHelper
   def render_flash
+    return '' if controller_name == 'sessions' && action_name == 'new'
+
     flash_messages = flash.map do |key, msg|
       render partial: 'application/flash', locals: { flash_type: key, message: msg }
     end.join.html_safe
