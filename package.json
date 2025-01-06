@@ -1,4 +1,6 @@
 {
+  "name": "street-team-2025",
+  "license": "MIT",
   "dependencies": {
     "autoprefixer": "^10.4.20",
     "flowbite": "^2.5.2",
